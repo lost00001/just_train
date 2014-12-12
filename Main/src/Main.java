@@ -1,6 +1,62 @@
 import java.io.IOException;
 import java.util.Scanner;
 
+class Pwr
+{
+	//cal the power
+	double b;
+	int e;
+	double val;
+	
+	public Pwr(double base, int exp)
+	{
+		// TODO Auto-generated constructor stub
+		b = base;
+		e = exp;
+		
+		val = 1;
+		if(exp == 0) return;
+		for( ; exp > 0; exp --) val = val * base;
+	}
+	
+	double get_pwr()
+	{
+		return val;
+	}
+}
+class Vehicle
+{
+	int passengers;
+	int fuelcap;
+	int mpg;
+	
+	public Vehicle(int p, int f, int m)
+	{
+		// TODO Auto-generated constructor stub
+		passengers = p;
+		fuelcap = f;
+		mpg = m;
+	}
+	
+	int range()
+	{
+		return mpg * fuelcap;
+	}
+	
+	double fuelneeded(int miles)
+	{
+		return (double) miles / mpg;
+	}
+	
+}
+class MyClass
+{
+	int x;
+	MyClass(int i)
+	{
+		x = i;
+	}
+}
 class Help
 {
 	void helpon(int what)
@@ -39,31 +95,8 @@ public class Main
 {
 	
 	public static void main(String[] args)
-	throws IOException
 	{
-		char choice, ignore;
-		//Scanner in = new Scanner();
-		Help hlpobj = new Help();
-		while(true)
-		{
-			do
-			{
-				hlpobj.showmenu();
-				choice = (char) System.in.read();
-				
-			
-				do
-				{
-					ignore =  (char) System.in.read();
-				} while (ignore != '\n');
-			} while (!hlpobj.isvalid(choice));
-			if(choice == 'q') break;
-			System.out.println("\n");
-			hlpobj.helpon(choice);
-			
-			
-		}
-		
+		System.out.println("hello world!");
 	}
 
 }
